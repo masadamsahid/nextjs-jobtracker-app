@@ -9,8 +9,6 @@ export default function Home() {
         </Button>
         <div className="bg-red-500 h-screen">AAAAAAAAA</div>
       </main>
-      <footer>
-      </footer>
     </div>
   );
 }

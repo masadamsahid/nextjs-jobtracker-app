@@ -5,6 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+		fontFamily: {
+			'inter': ['Inter', 'sans-serif'],
+			'outfit': ['Outfit', 'sans-serif'],
+			'plus-jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+		},
   	extend: {
   		borderRadius: {
   			lg: 'var(--radius)',
