@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '@/components/Navbar';
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ const HomeLayout = ({ children }: Props) => {
   return (
     <div>
       {/* TODO: build navbar here */}
-      <div>Navbar</div>
+      <Navbar/>
 
       {/* Content (page.tsx) goes from here */}
       <div>{children}</div>
