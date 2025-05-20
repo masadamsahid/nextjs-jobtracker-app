@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <div>
-      <main>
+      <main className="container mx-auto">
         <Button>
           Hello World
         </Button>
 
-        <section id="FAQs" className="p-16">
+        <section id="FAQs" className="p-6 sm:p-16">
           <h2 className="font-semibold text-5xl text-center mx-auto w-fit mb-4">
             Frequently Asked Questions
           </h2>
 
-          <div className="w-[500px] mx-auto">
+          <div className="max-w-[500px] mx-auto">
             <Accordion collapsible type="single" defaultValue="faq-1">
               <AccordionItem value="faq-1">
                 <AccordionTrigger>Is it free?</AccordionTrigger>
