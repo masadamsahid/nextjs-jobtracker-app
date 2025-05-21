@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const HomeLayout = ({ children }: Props) => {
       <div>{children}</div>
 
       {/* TODO: build footer here */}
-      <div>Footer</div>
+      <Footer/>
     </div>
   );
 }
