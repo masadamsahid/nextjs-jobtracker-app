@@ -30,22 +30,16 @@ type Props = {
 const CompanyEditPage = ({ children }: Props) => {
   return (
     <div>
-      <div id="illustration" className="flex">
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center text-center p-5">
-          <div>
-            <img
-              src="/building-bro-1.png"
-              alt="illustration"
-              className="w-[213px] h-[213px] md:w-[190px] md:h-[190px] sm:w-[160px] sm:h-[160px] lg:justify-self-end md:justify-self-end sm:justify-center"
-            />
-          </div>
-          <div>
-            <h1 className="scroll-m-20 text-center text-6xl font-extrabold tracking-tight text-balance">
-              Let us
-              <span className="text-green-500"> know</span> about
-              <span className="text-green-500"> the company</span>
-            </h1>
-          </div>
+      <div id="illustration" className="flex flex-col items-center justify-self-center md:ml-auto  md:flex-row lg:flex-row ">
+        <div className=" w-[160px] h-[160px] md:w-[213px] md:h-[213px]">
+          <img src="/building-bro-1.png" alt="illustration" />
+        </div>
+        <div className="text-center md:text-left">
+          <h1 className="text-4xl md:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance">
+            Let's improve
+            <span className="text-green-500"> about</span> this
+            <span className="text-green-500"> company</span>
+          </h1>
         </div>
       </div>
       <div id="company-form" className="flex flex-row-2 p-2 mt-auto">
