@@ -14,7 +14,6 @@ const HomeLayout = ({ children }: Props) => {
       <Navbar/>
 
       {/* Content (page.tsx) goes from here */}
-      {/* <Testimonial/> */}
       <div>{children}</div>
 
       {/* TODO: build footer here */}
