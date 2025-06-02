@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from "@/lib/utils";
 import { BadgeCheck, BadgeX } from "lucide-react";
 import Link from "next/link";
+import Testimonial from "@/components/Testimonial";
 
 const PLANS = [
   {
@@ -61,6 +62,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonial/>
 
         <section className="p-6 sm:p-16">
           <h2 className="font-semibold text-5xl text-center mx-auto w-fit mb-4">
