@@ -1,7 +1,4 @@
-
-import {
-  Card
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import React from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -25,11 +22,16 @@ type Props = {
 const AddJobApplication = ({ children }: Props) => {
   return (
     <div>
-      <div id="illustration" className="flex flex-col items-center justify-self-center md:ml-auto  md:flex-row lg:flex-row ">
-        <div className=" w-[160px] h-[160px] md:w-[213px] md:h-[213px]">
-          <img src="/Fill out-pana 1.png" alt="illustration" />
+      <div
+        id="illustration"
+        className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center"
+      >
+        <div className="justify-self-center md:justify-self-end lg:justify-self-end">
+          <div className="w-[160px] h-[160px] md:w-[213px] md:h-[213px]">
+            <img src="/Fill out-pana 1.png" alt="illustration" />
+          </div>
         </div>
-        <div className="text-center md:text-left">
+        <div className="col-span-2 text-center md:text-left lg:text-left">
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance">
             Let's
             <span className="text-green-500"> track</span> it!
@@ -41,15 +43,15 @@ const AddJobApplication = ({ children }: Props) => {
         <Card className="p-2 w-full">
           <div className="flex flex-wrap p-2 w-full gap-1.5">
             <div className="w-full sm:w-[calc(50%-0.75rem)] flex-grow">
-              <Label id="companyName">Job Title <span className="text-red-600">*</span></Label>
-              <Input
-                type="text"
-                placeholder="Job Title"
-                required
-              />
+              <Label id="companyName">
+                Job Title <span className="text-red-600">*</span>
+              </Label>
+              <Input type="text" placeholder="Job Title" required />
             </div>
             <div className="w-full sm:w-[calc(50%-0.75rem)] flex-grow">
-              <Label>Company <span className="text-red-600">*</span></Label>
+              <Label>
+                Company <span className="text-red-600">*</span>
+              </Label>
               <Input
                 type="text"
                 id="company-name"
@@ -79,16 +81,18 @@ const AddJobApplication = ({ children }: Props) => {
                 id="job-vacancy-link"
                 type="link"
                 placeholder="Eg. https://www.job-example.com/"
-                
               />
             </div>
           </div>
           <div className="grid p-2 w-full items-center gap-2">
             <Label htmlFor="resume">Resume(pdf.)</Label>
             <Input id="company-logo" type="file" />
-            
+
             <Label>Job Description</Label>
-            <Textarea id="job-description" placeholder="Please include all information relevant to job description." />
+            <Textarea
+              id="job-description"
+              placeholder="Please include all information relevant to job description."
+            />
           </div>
           <div></div>
           <div className="flex p-2 w-full items-center justify-between gap-2 md:mx-auto">
