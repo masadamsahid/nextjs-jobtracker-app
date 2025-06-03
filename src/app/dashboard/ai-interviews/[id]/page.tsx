@@ -7,13 +7,13 @@ import AIInterview from "./_components/AIInterview";
 
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-const AIInterviewsPage = ({ params }: Props) => {
-  const { id: strId = '1' } = params;
+const AIInterviewsPage = async ({ params }: Props) => {
+  const { id: strId = '1' } = await params;
   const id = Number(strId);
 
   const selectedInterview = INTERVIEWS.find((interview) => interview.id === id);
