@@ -38,9 +38,6 @@ export default function Home() {
   return (
     <div>
       <main className="container mx-auto">
-        <Button>
-          Hello World
-        </Button>
 
         <section id="hero" className="p-6 sm:p-16">
           <div className="flex items-center justify-center gap-6 md:gap-4 lg:gap-8 flex-col md:flex-row">
