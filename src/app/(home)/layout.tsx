@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Testimonial from '@/components/Testimonial';
 
 type Props = {
   children: React.ReactNode;
