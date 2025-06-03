@@ -19,10 +19,9 @@ import {
 import { Input } from "@/components/ui/input";
 
 type Props = {
-  children: React.ReactNode;
 };
 
-const EditJobApplication = ({ children }: Props) => {
+const EditJobApplication = ({  }: Props) => {
   return (
     <div>
       <div

@@ -17,10 +17,9 @@ import {
 import { Input } from "@/components/ui/input";
 
 type Props = {
-  children: React.ReactNode;
 };
 
-const CompanyEditPage = ({ children }: Props) => {
+const CompanyEditPage = ({ }: Props) => {
   return (
     <div>
       <div
