@@ -1,10 +1,4 @@
-import { useForm } from "react-hook-form";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import React from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -21,7 +15,6 @@ import {
 } from "@/components/ui/select";
 
 import { Input } from "@/components/ui/input";
-import { FileInput } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -30,11 +23,16 @@ type Props = {
 const CompanyEditPage = ({ children }: Props) => {
   return (
     <div>
-      <div id="illustration" className="flex flex-col items-center justify-self-center md:ml-auto  md:flex-row lg:flex-row ">
-        <div className=" w-[160px] h-[160px] md:w-[213px] md:h-[213px]">
-          <img src="/building-bro-1.png" alt="illustration" />
+      <div
+        id="illustration"
+        className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center"
+      >
+        <div className="justify-self-center md:justify-self-end lg:justify-self-end">
+          <div className="w-[160px] h-[160px] md:w-[213px] md:h-[213px]">
+            <img src="/building-bro-1.png" alt="illustration" />
+          </div>
         </div>
-        <div className="text-center md:text-left">
+        <div className="col-span-2 text-center md:text-left lg:text-left">
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance">
             Let's improve
             <span className="text-green-500"> about</span> this
@@ -42,6 +40,7 @@ const CompanyEditPage = ({ children }: Props) => {
           </h1>
         </div>
       </div>
+
       <div id="company-form" className="flex flex-row-2 p-2 mt-auto">
         <Card className="p-2 w-full">
           <div className="flex flex-wrap p-2 w-full gap-1.5">
