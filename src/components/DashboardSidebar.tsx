@@ -70,7 +70,7 @@ const DashboardSidebar = ({ className }: Props) => {
               <CardDescription>budibedubeda@gmail.com</CardDescription>
             </CardHeader>
           </div>
-          <Button className="bg-black w-full">Logout</Button>
+          <Button className="bg-black hover:bg-gray-700 w-full">Logout</Button>
         </Card>
       </div>
     </div>
