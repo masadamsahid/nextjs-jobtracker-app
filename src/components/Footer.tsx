@@ -11,7 +11,7 @@ const Footer = () => {
     <div
     className="
         flex flex-col items-center gap-4 text-white bg-primary 
-        px-[32px] py-[20px] 
+        px-[32px] py-[32px] 
         lg:px-[200px]  
         md:px-[54px] 
     "
@@ -21,15 +21,13 @@ const Footer = () => {
         </Link>
 
         <div className="flex flex-col items-center gap-2">
-            <p className="text-center text-base font-normal text-white">
+            <p className="text-center text-base font-normal text-white text-balance">
             Donec varius odio elit, nec egestas arcu volutpat id. Aenean aliquet tempor arcu, eu rhoncus nisl elementum et. Donec iaculis bibendum ultrices. Fusce aliquam ornare neque, quis tincidunt sapien.
             </p>
-            <p className="text-center text-base font-normal text-white">
+            <p className="text-center text-base font-normal text-white text-balance">
             Aenean vehicula lectus sapien, vel aliquet lectus aliquet eget. Suspendisse sit amet massa at mauris commodo vestibulum. Fusce viverra pharetra urna eget sagittis.
             </p>
-            <p className="text-center text-base font-normal text-white">
-            Cras imperdiet non felis in posuere.
-            </p>
+           
         </div>
 
         <div className="flex gap-8">
