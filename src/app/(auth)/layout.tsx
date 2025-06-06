@@ -1,11 +1,16 @@
-import React from 'react'
+import { ReactNode } from "react";
 
-type Props = {}
-
-const AuthLayout = (props: Props) => {
-  return (
-    <div>AuthLayout</div>
-  );
+type Props = {
+  children: ReactNode;
 }
+
+const AuthLayout = ({children}: Props) => {
+  return (
+    <div >
+      {children}
+
+    </div>
+  );
+};
 
 export default AuthLayout;
