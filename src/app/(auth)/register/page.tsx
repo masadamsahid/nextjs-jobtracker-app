@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Chrome } from "lucide-react";
+import { Chrome, Command } from "lucide-react";
 
 type Props = {};
 
@@ -11,17 +11,19 @@ const RegisterPage = (props: Props) => {
     <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center min-h-screen bg-slate-100">
       <div
         id="register-illustration"
-        className="p-2 md:p-2 lg:p-5 bg-white min-h-screen w-full hidden md:block md:justify-self-end lg:justify-self-end"
+        className="md:p-2 md:h-full bg-white  w-full hidden md:block "
       >
-        <div className="p-10">
-                  <Link href="/register" className="text-green-500 ">
-          Login
-        </Link>
+        <div className="flex pt-10">
+          <Link href="/" className="text-green-500 flex items-center gap-2">
+            <Command />
+            <span>LOGO</span>{" "}
+            {/* Wrap LOGO in a span for better control, though not strictly necessary for this layout */}
+          </Link>
         </div>
 
         <div className="flex flex-col items-center p-10 my-auto">
           <img
-            className="w-[calc(100%-5rem)] md:w-2/3 lg:max-w-[620px]"
+            className="w-1/3 md:w-2/3"
             src="/Login-rafiki 1.png"
             alt="Register Image"
           />
@@ -36,37 +38,71 @@ const RegisterPage = (props: Props) => {
           </blockquote>
         </div>
       </div>
-      <div id="register-form" className="lg:p-5 sm:p-2 md:p-2 min-h-screen w-full">
-        <div className="p-10 text-right">
+      <div
+        id="register-form"
+        className="lg:p-5 sm:p-2 md:p-2 md:h-full w-full "
+      >
+        <div
+          className="pt-10 pr-5
+         text-right "
+        >
           <Link href="/register" className="text-green-500">
             Register
           </Link>
         </div>
 
         <div
-          id="login-form"
-          className="flex flex-col my-auto p-5 lg:p-20  md:p-2 justify-center items-center gap-3 w-full max-h-screen"
+          id="register-form"
+          className="flex flex-col md:mt-10 p-5 lg:p-20  md:p-2 justify-center items-center gap-3 w-full"
         >
           {/* Assuming you have a way to handle images in TSX, e.g., direct import or public folder */}
           <img
-            src="/Login-bro 1.png"
-            alt="login-img"
-            className="block md:hidden "
+            src="/Login-rafiki 1.png"
+            alt="Register-img"
+            className="block w-2/3 md:hidden "
           />
           <div className="flex flex-col gap-2 items-center">
-            <h1 className="text-2xl font-semibold text-primary">Login</h1>
+            <h1 className="text-2xl font-semibold text-primary">
+              Create an account
+            </h1>
             <p className="text-sm text-zinc-500 text-center">
-              Fill the form below to login
+              Enter your email below to create your account
             </p>
           </div>
           <form action="" className="flex flex-col gap-2 w-full">
             <div>
-              <Input type="email" id="email" placeholder="name@example.com" className="bg-white"/>
+              <Input
+                type="text"
+                id="full-name"
+                placeholder="full name"
+                className="bg-white"
+              />
             </div>
             <div>
-              <Input type="password" id="password" placeholder="password" className="bg-white"/>
+              <Input
+                type="email"
+                id="email"
+                placeholder="name@example.com"
+                className="bg-white"
+              />
             </div>
-            <Button type="submit">Login</Button>
+            <div>
+              <Input
+                type="password"
+                id="password"
+                placeholder="password"
+                className="bg-white"
+              />
+            </div>
+            <div>
+              <Input
+                type="password"
+                id="confirm-password"
+                placeholder="confirm password"
+                className="bg-white"
+              />
+            </div>
+            <Button type="submit">Sign-in with Email</Button>
           </form>
           <p className="text-xs text-zinc-500">OR CONTINUE WITH</p>
 
