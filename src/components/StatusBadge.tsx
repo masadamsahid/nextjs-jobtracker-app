@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 const badgeVariants = cva("rounded-full text-xs font-light", {
   variants: {
-    status: {
+    status: {  
       listed: 'bg-stone-500/75 text-stone-800 hover:bg-stone-500/90',
       applied: 'bg-blue-500/75 text-blue-800 hover:bg-blue-500/90',
       interview: 'bg-orange-500/75 text-orange-800 hover:bg-orange-500/90',
