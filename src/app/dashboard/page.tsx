@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-
+import { Separator } from "@/components/ui/separator";
 import StatusBadge from "@/components/StatusBadge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -166,7 +166,7 @@ const page = (props: Props) => {
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
-
+      <Separator />
       <div className="mt-4">
         <ScrollArea className="w-full whitespace-nowrap pb-4">
           <Table className="border-separate border-spacing-y-[8px] border-spacing-x-[0px]">
