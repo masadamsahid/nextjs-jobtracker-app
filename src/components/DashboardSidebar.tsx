@@ -25,13 +25,17 @@ const DashboardSidebar = ({ className }: Props) => {
             <CommandList>
               <CommandEmpty>No results found.</CommandEmpty>
               <CommandGroup heading="Suggestions">
-                <CommandItem>
+                <CommandItem className={cn()}>
                   <BriefcaseBusiness />
-                  <Link href="/"><span>My Applications</span></Link>
+                  <Link href="/dashboard"><span>My Applications</span></Link>
                 </CommandItem>
                 <CommandItem>
                   <MessagesSquare />
-                  <Link href="/"><span>AI Interviews</span></Link>
+                  <Link href="/dashboard/ai-interviews"><span>AI Interviews</span></Link>
+                </CommandItem>
+                <CommandItem>
+                  <MessagesSquare />
+                  <Link href="/dashboard/companies"><span>Companies</span></Link>
                 </CommandItem>
               </CommandGroup>
               <CommandSeparator />
@@ -70,7 +74,11 @@ const DashboardSidebar = ({ className }: Props) => {
               <CardDescription>budibedubeda@gmail.com</CardDescription>
             </CardHeader>
           </div>
-          <Button className="bg-black hover:bg-gray-700 w-full">Logout</Button>
+          <Button asChild variant='outline' className="border-destructive text-destructive hover:bg-destructive hover:text-destructive-foreground w-full">
+            <Link href='/'>
+              Logout
+            </Link>
+          </Button>
         </Card>
       </div>
     </div>

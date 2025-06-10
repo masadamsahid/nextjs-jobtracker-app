@@ -46,8 +46,8 @@ const RegisterPage = (props: Props) => {
           className="pt-10 pr-5
          text-right "
         >
-          <Link href="/register" className="text-green-500">
-            Register
+          <Link href="/login" className="text-green-500">
+            Login
           </Link>
         </div>
 
@@ -102,13 +102,19 @@ const RegisterPage = (props: Props) => {
                 className="bg-white"
               />
             </div>
-            <Button type="submit">Sign-in with Email</Button>
+            <Button asChild>
+              <Link href="/dashboard">
+                Sign-in with Email
+              </Link>
+            </Button>
           </form>
           <p className="text-xs text-zinc-500">OR CONTINUE WITH</p>
 
-          <Button variant="outline" className="w-full">
-            <Chrome />
-            Google
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/dashboard">
+              <Chrome />
+              Google
+            </Link>
           </Button>
 
           <p className="text-sm text-zinc-500 text-center max-w-[286px]">

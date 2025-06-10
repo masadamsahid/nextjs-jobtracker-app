@@ -41,7 +41,7 @@ const LoginPage = (props: Props) => {
       <div id="login-form" className="lg:p-5 sm:p-2 md:p-2 md:h-full w-full ">
         <div className="pt-10 pr-5
          text-right ">
-          <Link href="/login" className="text-green-500">
+          <Link href="/register" className="text-green-500">
             Register
           </Link>
         </div>
@@ -79,13 +79,19 @@ const LoginPage = (props: Props) => {
                 className="bg-white"
               />
             </div>
-            <Button type="submit">Login</Button>
+            <Button asChild>
+              <Link href="/dashboard">
+                Login
+              </Link>
+            </Button>
           </form>
           <p className="text-xs text-zinc-500">OR CONTINUE WITH</p>
 
-          <Button variant="outline" className="w-full">
-            <Chrome />
-            Google
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/dashboard">
+              <Chrome />
+              Google
+            </Link>
           </Button>
 
           <p className="text-sm text-zinc-500 text-center max-w-[286px]">
