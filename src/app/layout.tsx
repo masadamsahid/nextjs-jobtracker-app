@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import GlobalDrawer from "@/components/GlobalDrawer";
 
 const inter = Inter({
@@ -24,6 +23,15 @@ export const metadata: Metadata = {
   title: "Jobtracker App",
   description: "Jobtracker App by Team C",
 };
+
+// export async function generateMetadata() {
+//   return {
+//     charset: 'utf-16',
+
+//     title: "Jobtracker App",
+//     description: "Jobtracker App by Team C",
+//   };
+// }
 
 export default function RootLayout({
   children,
