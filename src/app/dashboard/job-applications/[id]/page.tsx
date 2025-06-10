@@ -30,7 +30,7 @@ const JobApplicationDetailPage = async ({ params }: Props) => {
         <Card>
           <CardHeader>
             <div className="flex gap-4 items-center">
-              <Link href={`/dashboar/companies/${company?.id}`} className="flex-1 flex gap-4 items-center group">
+              <Link href={`/dashboard/companies/?id=${company?.id}`} className="flex-1 flex gap-4 items-center group">
                 <Avatar className="size-16 border border-border rounded-lg">
                   <AvatarImage src={company?.img_url} />
                   <AvatarFallback>
