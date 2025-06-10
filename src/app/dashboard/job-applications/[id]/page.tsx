@@ -18,9 +18,14 @@ type Props = {
 const JobApplicationDetailPage = async ({ params }: Props) => {
   const { id: _id } = await params;
   const id = Number(_id);
+  console.log({id});
+  
 
-  const selectedJob = JOB_APPLICATIONS.find(ja => ja.id === ja.id);
+  const selectedJob = JOB_APPLICATIONS.find(ja => ja.id === id);
   if (!selectedJob) return 'Not Found';
+  
+  console.log(selectedJob.id, {selectedJob});
+  
 
   const company = COMPANIES.find(c => c.id === selectedJob.company_id);
 
