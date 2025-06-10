@@ -47,7 +47,7 @@ const CompanyDetails = ({ selectedCompany, className }: CompaniesDetailsProps) =
                 {JOB_APPLICATIONS.filter((job) => job.company_id === selectedCompany.id).map((job) => (
                   <TableRow key={job.id}>
                     <TableCell>
-                      <Link href={`/dashboard/my-jobs/${job.id}`} className="hover:text-primary hover:underline">
+                      <Link href={`/dashboard/job-applications/${job.id}`} className="hover:text-primary hover:underline">
                         {job.job_title}
                       </Link>
                     </TableCell>
