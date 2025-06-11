@@ -1,4 +1,3 @@
-import React from "react";
 import AuthFormSection from "../_components/AuthFormSection";
 
 type Props = {};
