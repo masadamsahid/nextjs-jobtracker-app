@@ -34,11 +34,6 @@ export const metadata: Metadata = {
 // }
 
 
-export const noto = Noto_Color_Emoji({
-  subsets: ['emoji'],
-  weight: '400',
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{

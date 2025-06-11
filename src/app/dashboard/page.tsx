@@ -12,7 +12,13 @@ import { Separator } from "@/components/ui/separator";
 import StatusBadge from "@/components/StatusBadge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { noto } from "../layout";
+import { Noto_Color_Emoji } from "next/font/google";
+
+const noto = Noto_Color_Emoji({
+  subsets: ['emoji'],
+  weight: '400',
+});
+
 type Props = {};
 
 const page = (props: Props) => {
