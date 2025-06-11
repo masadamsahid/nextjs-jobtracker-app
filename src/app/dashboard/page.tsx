@@ -12,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import StatusBadge from "@/components/StatusBadge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { noto } from "../layout";
 type Props = {};
 
 const page = (props: Props) => {
@@ -151,7 +152,7 @@ const page = (props: Props) => {
                 <CardTitle className={`text-sm font-medium ${stat.colorClass}`}>
                   {stat.title}
                 </CardTitle>
-                <span className="font-variant-emoji">{stat.emoji}</span>
+                <span className={`font-variant-emoji ${noto.className}`}>{stat.emoji}</span>
               </CardHeader>
               <CardContent>
                 <h2 className="text-2xl font-bold text-foreground">

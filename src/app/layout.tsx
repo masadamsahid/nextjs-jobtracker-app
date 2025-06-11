@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Noto_Color_Emoji, Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import GlobalDrawer from "@/components/GlobalDrawer";
 
@@ -32,6 +32,12 @@ export const metadata: Metadata = {
 //     description: "Jobtracker App by Team C",
 //   };
 // }
+
+
+export const noto = Noto_Color_Emoji({
+  subsets: ['emoji'],
+  weight: '400',
+});
 
 export default function RootLayout({
   children,
