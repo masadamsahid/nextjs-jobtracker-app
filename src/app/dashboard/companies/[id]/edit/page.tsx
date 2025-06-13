@@ -3,13 +3,12 @@ import ComnpanyForm from "../../_components/CompanyForm";
 import COMPANIES from "@/dummy-data/companies";
 
 type Props = {
-
   params: Promise<{
     id: string;
   }>;
 };
 
-const CompanyEditPage = async ({params }: Props) => {
+const CompanyEditPage = async ({ params }: Props) => {
   const { id: strId } = await params;
   const id = Number(strId);
 
@@ -29,8 +28,8 @@ const CompanyEditPage = async ({params }: Props) => {
         <div className="col-span-2 text-center md:text-left lg:text-left">
           <h1 className="text-4xl md:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance">
             Let's improve
-            <span className="text-green-500"> about</span> this
-            <span className="text-green-500"> company</span>
+            <span className="text-primary"> about</span> this
+            <span className="text-primary"> company</span>
           </h1>
         </div>
       </div>
