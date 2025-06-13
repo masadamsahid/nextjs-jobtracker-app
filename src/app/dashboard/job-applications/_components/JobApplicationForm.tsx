@@ -20,7 +20,7 @@ const JobApplicationForm = ({ mode, selectedJobApplication }: Props) => {
   return (
     <div id="company-form" className="flex flex-row-2 p-6 mt-auto">
       <Card className="p-2 w-full">
-        <div className="flex flex-wrap p-2 w-full gap-1.5">
+        <div className="flex flex-wrap p-2 w-full gap-4">
           <div className="w-full sm:w-[calc(50%-0.75rem)] flex-grow">
             <Label id="jobTitle">
               Job Title <span className="text-destructive">*</span>
@@ -71,7 +71,7 @@ const JobApplicationForm = ({ mode, selectedJobApplication }: Props) => {
             />
           </div>
         </div>
-        <div className="grid p-2 w-full items-center gap-2">
+        <div className="grid p-2 w-full items-center gap-4">
           <Label htmlFor="resume">Resume(pdf.)</Label>
           <Input id="company-logo" type="file" />
 
@@ -85,7 +85,7 @@ const JobApplicationForm = ({ mode, selectedJobApplication }: Props) => {
           />
         </div>
         <div></div>
-        <div className="flex p-2 w-full items-center justify-between gap-2 md:mx-auto">
+        <div className="flex p-2 w-full items-center justify-between gap-4 md:mx-auto">
           <Button type="submit" variant="outline">
             Cancel
           </Button>{" "}
