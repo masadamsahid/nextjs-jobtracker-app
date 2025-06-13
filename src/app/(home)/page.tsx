@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { BadgeCheck, BadgeX } from "lucide-react";
 import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
+import Achievement from "@/components/Achievement";
 
 const PLANS = [
   {
@@ -62,6 +63,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Achievement/>
 
         <Testimonial/>
 
