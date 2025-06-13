@@ -1,24 +1,23 @@
-
 import React from "react";
 import ComnpanyForm from "../../_components/CompanyForm";
-import COMPANIES from "@/dummy-data/companies"
+import COMPANIES from "@/dummy-data/companies";
 
 type Props = {
-    mode: "add" | "edit";
-  params : Promise<{
-    id:string;
-  }>
+
+  params: Promise<{
+    id: string;
+  }>;
 };
 
-const CompanyEditPage = async({mode:add ,params }: Props) => {
-    const {id:strId} = await params;
+const CompanyEditPage = async ({params }: Props) => {
+  const { id: strId } = await params;
   const id = Number(strId);
 
-  const selectedCompany = COMPANIES.find(company => company.id === id)
-  const mode: "add" |"edit" = "edit";
+  const selectedCompany = COMPANIES.find((company) => company.id === id);
+
   return (
-<div className="grid grid-cols-1">
-  <div
+    <div className="grid grid-cols-1">
+      <div
         id="illustration"
         className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center"
       >
@@ -35,16 +34,9 @@ const CompanyEditPage = async({mode:add ,params }: Props) => {
           </h1>
         </div>
       </div>
-      <h1>{selectedCompany?.name}</h1>
-      <ComnpanyForm  />
 
-
-</div>
-      
-
-
-
-
+      <ComnpanyForm mode={"edit"} selectedCompany={selectedCompany} />
+    </div>
   );
 };
 
