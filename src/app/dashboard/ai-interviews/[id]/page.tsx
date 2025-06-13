@@ -29,7 +29,10 @@ const AIInterviewsPage = async ({ params }: Props) => {
           </div>
         </div>
         <Separator />
-        <AIInterviewList interviews={INTERVIEWS} selectedInterview={selectedInterview} />
+        <AIInterviewList
+          interviews={INTERVIEWS}
+          selectedInterview={selectedInterview}
+        />
       </div>
 
       <Separator orientation="vertical" className="hidden md:block" />
