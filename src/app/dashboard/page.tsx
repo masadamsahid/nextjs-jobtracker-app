@@ -167,8 +167,10 @@ const page = (props: Props) => {
                     {moment(app.tracked_at).fromNow()}
                   </TableCell>
                   <TableCell className="px-[3px] py-[10px]">
-                    <Button variant="ghost" size="sm">
-                      Edit
+                    <Button asChild variant="ghost" size="sm">
+                      <Link href={`/dashboard/companies/${app.company?.id}/edit`}>
+                        Edit
+                      </Link>
                     </Button>
                     <Button variant="ghost" size="sm" className="ml-2">
                       Delete
