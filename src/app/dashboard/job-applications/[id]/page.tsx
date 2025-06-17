@@ -1,3 +1,4 @@
+import InvokeTopbar from "@/components/InvokeTopbar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Separator } from "@/components/ui/separator";
 import COMPANIES from "@/dummy-data/companies";
 import JOB_APPLICATIONS from "@/dummy-data/job-applications";
-import { Edit2, Ellipsis, ExternalLink, RefreshCcw, Speech, Trash2 } from "lucide-react";
+import { Edit2, Ellipsis, ExternalLink, Pencil, Plus, RefreshCcw, Speech, Trash2 } from "lucide-react";
 import moment from "moment";
 import Link from "next/link";
 
@@ -32,6 +33,18 @@ const JobApplicationDetailPage = async ({ params }: Props) => {
   return (
     <div className="p-4 flex flex-col md:flex-row gap-4">
       <div className="flex-1 flex flex-col gap-4">
+        <InvokeTopbar>
+           <Button asChild size='icon' variant='ghost'>
+          <Link href={`/dashboard/job-applications/${selectedJob.id}/edit`}>
+            <Pencil />
+          </Link>
+        </Button>
+        <Button asChild size='icon' variant='ghost'>
+          <Link href={`/dashboard/job-applications/add`}>
+            <Plus />
+          </Link>
+        </Button>
+        </InvokeTopbar>
         <Card>
           <CardHeader>
             <div className="flex gap-4 items-center">
