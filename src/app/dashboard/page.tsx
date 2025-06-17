@@ -168,7 +168,7 @@ const page = (props: Props) => {
                   </TableCell>
                   <TableCell className="px-[3px] py-[10px]">
                     <Button asChild variant="ghost" size="sm">
-                      <Link href={`/dashboard/companies/${app.company?.id}/edit`}>
+                      <Link href={`/dashboard/job-applications/${app.company?.id}/edit`}>
                         Edit
                       </Link>
                     </Button>

@@ -1,12 +1,6 @@
 import { ReactNode } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  AlignLeft,
-  Plus,
-} from "lucide-react"
 
 import DashboardSidebar from "@/components/DashboardSidebar";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import DashboardTopbar from "./_components/DashboardTopbar";
 
 type Props = {

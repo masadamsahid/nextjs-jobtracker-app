@@ -1,3 +1,5 @@
+"use client";
+
 import StatusBadge from "@/components/StatusBadge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -7,7 +9,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Company } from "@/dummy-data/companies";
 import JOB_APPLICATIONS from "@/dummy-data/job-applications";
 import { cn } from "@/lib/utils";
-import { Ellipsis, ImageOff } from "lucide-react";
+import { Ellipsis, ImageOff, Pencil, Plus } from "lucide-react";
 import moment from "moment";
 import Link from "next/link";
 
@@ -15,9 +17,9 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useDashboardTopBarStore } from "@/lib/zustand/dashboard-topbar.store";
+import { useEffect } from "react";
 
 type CompaniesDetailsProps = {
   selectedCompany: Company;
@@ -25,6 +27,24 @@ type CompaniesDetailsProps = {
 }
 
 const CompanyDetails = ({ selectedCompany, className }: CompaniesDetailsProps) => {
+  const { setRightIcons } = useDashboardTopBarStore();
+  useEffect(() => {
+    setRightIcons(
+      <>
+        <Button asChild size='icon' variant='ghost'>
+          <Link href={`/dashboard/companies/${selectedCompany.id}/edit`}>
+            <Pencil />
+          </Link>
+        </Button>
+        <Button asChild size='icon' variant='ghost'>
+          <Link href={`/dashboard/companies/add`}>
+            <Plus />
+          </Link>
+        </Button>
+      </>
+    );
+  }, []);
+
   return (
     <div className={cn("flex flex-col", className)}>
       <div className="p-4 flex gap-4">
@@ -63,7 +83,7 @@ const CompanyDetails = ({ selectedCompany, className }: CompaniesDetailsProps) =
                 ].map((img_url, i) => (
                   <CarouselItem key={img_url} className="basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-md overflow-hidden p-0">
                     <Avatar className="size-full rounded-md aspect-square">
-                      <AvatarImage src={img_url} alt={`Image ${i}`} className="size-full object-cover"/>
+                      <AvatarImage src={img_url} alt={`Image ${i}`} className="size-full object-cover" />
                       <AvatarFallback className="rounded-md">
                         <ImageOff />
                       </AvatarFallback>
