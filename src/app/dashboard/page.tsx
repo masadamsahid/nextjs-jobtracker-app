@@ -13,6 +13,10 @@ import StatusBadge from "@/components/StatusBadge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Noto_Color_Emoji } from "next/font/google";
+import JOB_APPLICATIONS from "@/dummy-data/job-applications";
+import COMPANIES from "@/dummy-data/companies";
+import moment from "moment";
+import Link from "next/link";
 
 const noto = Noto_Color_Emoji({
   subsets: ['emoji'],
@@ -25,129 +29,70 @@ const page = (props: Props) => {
   const jobApplicationStats = [
     {
       title: "Listed",
-      value: 43,
+      value: 0,
       description: "job applications",
       emoji: "💾",
       colorClass: "text-stone-600",
     },
     {
       title: "Applied",
-      value: 43,
+      value: 0,
       description: "job applications",
       emoji: "✈",
       colorClass: "text-blue-600",
     },
     {
       title: "Interview",
-      value: 43,
+      value: 0,
       description: "job applications",
       emoji: "🗣",
       colorClass: "text-orange-600",
     },
     {
       title: "Accepted",
-      value: 43,
+      value: 0,
       description: "job applications",
       emoji: "🤝",
       colorClass: "text-green-600",
     },
     {
       title: "Rejected",
-      value: 43,
+      value: 0,
       description: "job applications",
       emoji: "😭",
       colorClass: "text-red-600",
     },
   ];
 
-  // Dummy data for job applications - you would replace this with actual data
-  const jobApplications = [
-    {
-      id: 1,
-      company: "Tech Solutions Inc.",
-      jobTitle: "Software Engineer",
-      status: "Applied",
-      trackedSince: "2024-01-15",
-    },
-    {
-      id: 2,
-      company: "Innovate Co.",
-      jobTitle: "UX Designer",
-      status: "Interview",
-      trackedSince: "2024-02-01",
-    },
-    {
-      id: 3,
-      company: "Global Corp.",
-      jobTitle: "Data Analyst",
-      status: "Listed",
-      trackedSince: "2024-01-20",
-    },
-    {
-      id: 4,
-      company: "Creative Minds",
-      jobTitle: "Marketing Specialist",
-      status: "Rejected",
-      trackedSince: "2024-03-10",
-    },
-    {
-      id: 5,
-      company: "Future Systems",
-      jobTitle: "Project Manager",
-      status: "Accepted",
-      trackedSince: "2024-02-28",
-    },
-    {
-      id: 6,
-      company: "Tech Solutions Inc.",
-      jobTitle: "Software Engineer",
-      status: "Applied",
-      trackedSince: "2024-01-15",
-    },
-    {
-      id: 7,
-      company: "Innovate Co.",
-      jobTitle: "UX Designer",
-      status: "Interview",
-      trackedSince: "2024-02-01",
-    },
-    {
-      id: 8,
-      company: "Global Corp.",
-      jobTitle: "Data Analyst",
-      status: "Listed",
-      trackedSince: "2024-01-20",
-    },
-    {
-      id: 9,
-      company: "Creative Minds",
-      jobTitle: "Marketing Specialist",
-      status: "Rejected",
-      trackedSince: "2024-03-10",
-    },
-    {
-      id: 10,
-      company: "Future Systems",
-      jobTitle: "Project Manager",
-      status: "Accepted",
-      trackedSince: "2024-02-28",
-    },
-  ];
-
-  const getStatusBadgeVariant = (status: string) => {
-    switch (status) {
-      case "Accepted":
-        return "accepted"; // You might define a 'success' variant if needed
-      case "Rejected":
-        return "rejected";
-      case "Interview":
-        return "interview";
-      case "Applied":
-        return "applied";
-      case "Listed":
-        return "listed";
+  JOB_APPLICATIONS.forEach((ja) => {
+    switch (ja.status) {
+      case "accepted":
+        jobApplicationStats[3].value += 1;
+        break;
+      case "rejected":
+        jobApplicationStats[4].value += 1;
+        break;
+      case "interview":
+        jobApplicationStats[2].value += 1;
+        break;
+      case "applied":
+        jobApplicationStats[1].value += 1;
+        break;
+      case "listed":
+        jobApplicationStats[0].value += 1;
+        break;
     }
-  };
+  });
+
+  const jobAppWithCompany = JOB_APPLICATIONS.map((ja) => {
+
+    return {
+      ...ja,
+      company: COMPANIES.find(c => c.id === ja.company_id),
+    };
+  });
+
+
   return (
     <div className="dashboard-content overflow-y-auto max-h-[calc(100vh-52px)] flex-1 p-2">
       <ScrollArea className="w-full whitespace-nowrap pb-4">
@@ -198,24 +143,28 @@ const page = (props: Props) => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {jobApplications.map((app) => (
+              {jobAppWithCompany.map((app, i) => (
                 <TableRow key={app.id}>
                   <TableCell className="text-center px-[3px] py-[10px]">
                     {app.id}
                   </TableCell>
                   <TableCell className="text-left px-[3px] py-[10px]">
-                    {app.company}
+                    <Link href={`/dashboard/companies?id=${app.company?.id}`} className="hover:underline hover:text-primary">
+                      {app.company?.name}
+                    </Link>
                   </TableCell>
                   <TableCell className="text-left px-[3px] py-[10px]">
-                    {app.jobTitle}
+                    <Link href={`/dashboard/job-applications/${app.id}`} className="hover:underline hover:text-primary">
+                      {app.job_title}
+                    </Link>
                   </TableCell>
                   <TableCell className="text-left px-[3px] py-[10px]">
-                    <StatusBadge status={getStatusBadgeVariant(app.status)}>
+                    <StatusBadge status={app.status}>
                       {app.status}
                     </StatusBadge>
                   </TableCell>
                   <TableCell className="text-left px-[3px] py-[10px]">
-                    {app.trackedSince}
+                    {moment(app.tracked_at).fromNow()}
                   </TableCell>
                   <TableCell className="px-[3px] py-[10px]">
                     <Button variant="ghost" size="sm">
