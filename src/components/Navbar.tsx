@@ -14,6 +14,10 @@ const NAV_LINKS = [
     href: "/",
   },
   {
+    name: "About Us",
+    href: "/about-us",
+  },
+  {
     name: "Achievements",
     href: "/#achievements",
   },
