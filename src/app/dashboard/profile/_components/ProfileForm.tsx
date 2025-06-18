@@ -44,9 +44,9 @@ export default function ProfileForm() {
     resolver: zodResolver(ProfileFormSchema),
     defaultValues: {
       bio: "I'm a frontend developer with a passion for building beautiful and user-friendly web applications. In my free time, I enjoy exploring new technologies and contributing to open-source projects.",
-      email: "your.email@example.com",
-      website: "http://www.my-website.com", // Default value sesuai permintaan
-      linkedIn: "https://www.linkedin.com/in/username/",
+      email: "budibedubeda@gmail.com",
+      website: "http://www.budibedubeda-website.com", // Default value sesuai permintaan
+      linkedIn: "https://www.linkedin.com/in/budibedubeda/",
     },
   });
 
