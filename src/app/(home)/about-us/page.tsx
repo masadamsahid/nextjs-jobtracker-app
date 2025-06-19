@@ -9,24 +9,8 @@ import Link from "next/link";
 import Testimonial from "@/components/Testimonial";
 import Achievement from "@/components/Achievement";
 import { title } from "process";
+import MemberProfiles from "./_components/MemberProfiles"
 
-const Profile = [
-  {
-    image: '/LK1.png',
-    name: 'Dennis Bouvard',
-    title: 'CEO',
-  },
-  {
-    image: '/PR1.png',
-    name: 'Renatus Gerard',
-    title: 'Product Manager',
-  },
-  {
-    image: '/PR2.png',
-    name: 'Leslie Alexander',
-    title: 'Data Scientist',
-  }
-];
 
 const AboutUs = () => {
   return (
@@ -36,7 +20,7 @@ const AboutUs = () => {
           <div className="about-us-container">
             {/* About Us Header */}
             <div className="about-us-header text-left font-inter">
-              <div className="about-us-title text-[#16A249] font-bold text-5xl font-inter">
+              <div className="about-us-title text-[#16A249] font-bold text-5xl font-inter ">
                 <h1>Simplify Your Job Search: AI Interviews & Effortless Application</h1>
               </div>
             </div>
@@ -84,16 +68,9 @@ const AboutUs = () => {
               <div className="teams-title ml-[16px] text-4xl font-bold text-[#475569]">
                 <h1>Our Teams</h1>
               </div>
+              <MemberProfiles />
 
-              <div className="profile-container flex flex-row justify-center items-center gap-[183px] mt-[38px]">
-                {Profile.map((profile) => (
-                    <div className="teams-profile flex flex-col text-center" key={profile.name}>
-                      <img src={profile.image} alt="Profile Image" className="w-[140px] h-[147px]"/>
-                      <p className="font-bold text-sm mt-[26px]">{profile.name}</p>
-                      <p className="text-sm font-regular mt-[9px]">{profile.title}</p>
-                    </div>
-                ))}
-              </div>
+
               
             </div>
           </div>
