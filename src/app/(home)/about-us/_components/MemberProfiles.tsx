@@ -22,22 +22,22 @@ const MemberProfiles = (props: Props) => {
     },
   ];
   return (
-    <div className="profile-container flex flex-row justify-center items-center gap-[183px] mt-[38px]">
-      {profile.map((profile) => (
-        <div
-          className="teams-profile flex flex-col text-center"
-          key={profile.name}
-        >
-          <img
-            src={profile.image}
-            alt="Profile Image"
-            className="w-[140px] h-[147px] rounded-full"
-          />
-          <p className="font-bold text-sm mt-[26px]">{profile.name}</p>
-          <p className="text-sm font-regular mt-[9px]">{profile.title}</p>
-        </div>
-      ))}
+<div className="profile-container flex flex-wrap justify-center mt-[38px] gap-6 md:gap-12 lg:gap-24">
+  {profile.map((profile) => (
+    <div
+      className="teams-profile flex flex-col items-center text-center w-[140px]"
+      key={profile.name}
+    >
+      <img
+        src={profile.image}
+        alt="Profile Image"
+        className="w-[140px] h-[140px] rounded-full object-cover"
+      />
+      <p className="font-bold text-sm mt-[26px]">{profile.name}</p>
+      <p className="text-sm font-regular mt-[9px]">{profile.title}</p>
     </div>
+  ))}
+</div>
   );
 };
 
