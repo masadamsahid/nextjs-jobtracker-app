@@ -80,18 +80,20 @@ const AboutUs = () => {
             <hr className="mt-[56px] bg-[#E5E7EB]"/>
 
             {/* About Us Teams */}
-            <div className="about-us-teams">
-              <div className="teams-title">
+            <div className="about-us-teams mt-[24px]">
+              <div className="teams-title ml-[16px] text-4xl font-bold text-[#475569]">
                 <h1>Our Teams</h1>
               </div>
 
-              {Profile.map((profile) => (
-                <div className="teams-profile">
-                  <img src={profile.image} alt="Profile Image" />
-                  <p>{profile.name}</p>
-                  <p>{profile.title}</p>
+              <div className="profile-container flex flex-row justify-center items-center gap-[183px] mt-[38px]">
+                {Profile.map((profile) => (
+                    <div className="teams-profile flex flex-col text-center" key={profile.name}>
+                      <img src={profile.image} alt="Profile Image" className="w-[140px] h-[147px]"/>
+                      <p className="font-bold text-sm mt-[26px]">{profile.name}</p>
+                      <p className="text-sm font-regular mt-[9px]">{profile.title}</p>
+                    </div>
+                ))}
               </div>
-              ))}
               
             </div>
           </div>
