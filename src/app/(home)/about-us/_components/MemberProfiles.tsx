@@ -6,6 +6,11 @@ type Props = {};
 const MemberProfiles = (props: Props) => {
   const profile = [
     {
+      image: "/000_0002.jpg",
+      name: "Ariq Fikri Tamamy",
+      title: "Frontend Developer",
+    },
+    {
       image: "/profile-adam.webp",
       name: "Maulana Adam Sahid",
       title: "Lead Frontend Developer",
@@ -13,11 +18,6 @@ const MemberProfiles = (props: Props) => {
     {
       image: "/profile-noora.jpg",
       name: "Noora Aulia Hidayat",
-      title: "Frontend Developer",
-    },
-    {
-      image: "/profile-ariq.png",
-      name: "Ariq Fikri Tamamy",
       title: "Frontend Developer",
     },
   ];

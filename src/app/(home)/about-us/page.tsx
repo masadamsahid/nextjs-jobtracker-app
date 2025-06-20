@@ -49,7 +49,7 @@ const AboutUs = () => {
                     effectively to maximize your chances of success.
                   </p>
                 </div>
-                <div className="content-image hidden md:block flex flex-col gap-[12px] justify-center items-center">
+                <div className="content-image hidden md:block flex-col gap-[12px] justify-center items-center">
                   <img
                     src="/gallery.png"
                     alt="Content Image"
@@ -64,7 +64,7 @@ const AboutUs = () => {
               </div>
 
               <div className="right-content flex flex-col gap-[20px]">
-                <div className="content-image hidden md:block flex justify-center items-center">
+                <div className="content-image hidden md:block justify-center items-center">
                   <img src="/gallery-3.png" alt="Content Image" />
                 </div>
                 <CarouselProfiles />

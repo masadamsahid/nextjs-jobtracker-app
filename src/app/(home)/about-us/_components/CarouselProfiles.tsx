@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 type Props = {}
 const profiles = [
-  { id: 1, name: 'Profile 1', image: '/gallery-3.png' },
+  { id: 1, name: 'Profile 1', image: '/gallery-3.png', },
   { id: 2, name: 'Profile 2', image: '/gallery.png' },
   { id: 3, name: 'Profile 3', image: '/gallery-2.png' },
   // Tambahkan lebih banyak profil sesuai kebutuhan
