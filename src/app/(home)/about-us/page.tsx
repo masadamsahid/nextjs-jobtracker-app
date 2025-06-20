@@ -1,7 +1,7 @@
 import React from "react";
 import MemberProfiles from "./_components/MemberProfiles";
-import CarouselProfiles from "./_components/CarouselProfiles"
-import Image from 'next/image'; 
+import CarouselProfiles from "./_components/CarouselProfiles";
+import Image from "next/image";
 
 const AboutUs = () => {
   return (
@@ -49,27 +49,38 @@ const AboutUs = () => {
                     effectively to maximize your chances of success.
                   </p>
                 </div>
-                <div className="content-image hidden md:block flex-col gap-[12px] justify-center items-center">
-                  <img
+                <div className="content-image hidden md:block justify-center items-center">
+                  <Image
                     src="/gallery.png"
                     alt="Content Image"
-                    className="w-[404px] h-[240px]"
+                    width={404} // Sesuaikan width/height ini agar gambar tidak terlalu lebar dan ada ruang untuk dipusatkan
+                    height={240}
+                    // Jika Anda ingin gambar fleksibel, gunakan max-w-full dan tambahkan mx-auto
+                    className="mx-auto mb-4" // Tambahkan mx-auto untuk memusatkan gambar itu sendiri jika ia adalah elemen block
                   />
-                  <img
+                  <Image
                     src="/gallery-2.png"
                     alt="Content Image"
-                    className="w-[404px] h-[240px]"
+                    width={404} // Sesuaikan width/height ini agar gambar tidak terlalu lebar dan ada ruang untuk dipusatkan
+                    height={240}
+                    // Jika Anda ingin gambar fleksibel, gunakan max-w-full dan tambahkan mx-auto
+                    className="mx-auto" // Tambahkan mx-auto untuk memusatkan gambar itu sendiri jika ia adalah elemen block
                   />
                 </div>
               </div>
 
               <div className="right-content flex flex-col gap-[20px]">
                 <div className="content-image hidden md:block justify-center items-center">
-                  <img src="/gallery-3.png" alt="Content Image" />
+                  <Image
+                    src="/gallery-3.png"
+                    alt="Content Image"
+                    width={500} // Sesuaikan width/height ini agar gambar tidak terlalu lebar dan ada ruang untuk dipusatkan
+                    height={300}
+                    // Jika Anda ingin gambar fleksibel, gunakan max-w-full dan tambahkan mx-auto
+                    className="mx-auto" // Tambahkan mx-auto untuk memusatkan gambar itu sendiri jika ia adalah elemen block
+                  />
                 </div>
                 <CarouselProfiles />
-
-
 
                 <div className="content-title mt-[24px] font-bold text-4xl text-[#475569]">
                   <h1>Beyond Tracking: Achieving Your Goals</h1>
