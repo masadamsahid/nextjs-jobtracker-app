@@ -13,17 +13,17 @@ import { title } from "process";
 const Profile = [
   {
     image: '/LK1.png',
-    name: 'Dennis Bouvard',
+    name: 'Ariq Fikri Tamamy',
     title: 'CEO',
   },
   {
-    image: '/PR1.png',
-    name: 'Renatus Gerard',
+    image: '/adam.png',
+    name: 'Maulana Adam Sahid',
     title: 'Product Manager',
   },
   {
     image: '/PR2.png',
-    name: 'Leslie Alexander',
+    name: 'Noora Aulia Hidayat',
     title: 'Data Scientist',
   }
 ];
@@ -88,7 +88,7 @@ const AboutUs = () => {
               <div className="profile-container flex flex-row justify-center items-center gap-[183px] mt-[38px]">
                 {Profile.map((profile) => (
                     <div className="teams-profile flex flex-col text-center" key={profile.name}>
-                      <img src={profile.image} alt="Profile Image" className="w-[140px] h-[147px]"/>
+                      <img src={profile.image} alt="Profile Image" className="rounded-full w-[140px] h-[147px]"/>
                       <p className="font-bold text-sm mt-[26px]">{profile.name}</p>
                       <p className="text-sm font-regular mt-[9px]">{profile.title}</p>
                     </div>
